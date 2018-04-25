@@ -1,0 +1,5 @@
+debug
+*.sqlite3
+*.db
+*.crt
+*.key

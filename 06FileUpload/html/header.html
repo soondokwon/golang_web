@@ -1,0 +1,25 @@
+{{define "header"}}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{.Title}}</title>
+<style>
+    body {
+        background-color: lightcyan;
+    }
+</style>
+<script>
+    window.onload = function ( e ) {
+        console.log("onload() called...")
+    }
+</script>
+{{end}}
+
+{{define "navbar"}}
+<nav>
+    <ul>
+        <li><a href="/edit/{{.Title}}">edit {{.Title}}</a></li>
+        <li><a href="/view/{{.Title}}">view {{.Title}}</a></li>
+        <li><a href="/upload/">Upload a file</a></li>
+    </ul>
+</nav>
+{{end}}

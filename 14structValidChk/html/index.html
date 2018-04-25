@@ -1,0 +1,29 @@
+{{define "index"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        {{template "header" .}}
+        <title>Index Page</title>
+    </head>
+    <body>
+        {{template "navbar" .}}
+        <div class="w3-container">
+            <h2>This is Index Page.</h2>
+
+            <div class="w3-card-4" style="width:70%">
+                <header class="w3-container w3-light-grey">
+                    <h3>Kwon Soon Doe</h3>
+                </header>
+                <div class="w3-container">
+                    <p>1 new friend request</p>
+                    <hr>
+                    <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                    <p>CEO at Mighty Schools. Marketing and Advertising. Seeking a new job and new opportunities.</p><br>
+                </div>
+                <a href="/login" class="w3-button w3-block w3-dark-grey">Login</a>
+            </div>
+        </div>              
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}

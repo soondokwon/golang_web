@@ -1,0 +1,25 @@
+{{define "view"}}
+<html>
+    <head>
+        {{template "header" .}}
+        <title>View Page.</title>
+    </head>
+    <body>
+        {{template "navbar" .}}
+        <div class="w3-card-4" style="width:70%">
+            <header class="w3-container w3-light-grey">
+                <h3>This is Registered Info!!!</h3>
+            </header>
+            <div class="w3-container">
+                <p>{{.Fname}}&nbsp;{{.Lname}}</p>
+                <hr>
+                <img src="https://www.w3schools.com/w3css/img_avatar3.png" alt="Avatar" class="w3-left w3-circle w3-margin-right" style="width:60px">
+                <p>Email : {{.Email}}</p>
+                <p>ID : {{.Id}}</p>
+                <p>PW : {{.Pw}}</p><br>
+            </div>
+        </div>
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}

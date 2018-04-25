@@ -1,0 +1,24 @@
+{{define "header"}}
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Login page.</title>
+<style>
+    body {
+        background-color: lightcyan;
+    }
+</style>
+<script>
+    window.onload = function ( e ) {
+        console.log("onload() called...")
+    }
+</script>
+{{end}}
+
+{{define "navbar"}}
+<nav>
+    <ul>
+        <li><a href="/">index</a></li>
+        <li><a href="/logout">logout</a></li>
+    </ul>
+</nav>
+{{end}}

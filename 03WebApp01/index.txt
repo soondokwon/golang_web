@@ -1,0 +1,10 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>This is index page</title>
+    </head>
+    <body>
+        <h1>Go lang html</h1>
+        <p>This is for golang.</p>
+    </body>
+</html>

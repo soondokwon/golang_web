@@ -1,0 +1,13 @@
+{{define "base"}}
+<html>
+    <head>
+        {{template "header" .}}
+    </head>
+    <body>
+        <!-- 외부 html을 여기에 embedding한다. -->
+        {{template "navbar" .}}
+        {{template "main" .}}
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}

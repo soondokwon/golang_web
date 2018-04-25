@@ -1,0 +1,43 @@
+{{define "register"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        {{template "header" .}}
+        <title>Register Page</title>
+    </head>
+    <body>
+        {{template "navbar" .}}
+        <div class="w3-container w3-blue">
+            <h2>Register</h2>
+        </div>
+        {{block "flash" .}} {{end}}
+        <form class="w3-container" method="post" action="/register">
+            <p>
+                <label>Login ID</label>
+                <input class="w3-input" type="text" name="id" />
+            </p>
+            <p>
+                <label>Password</label>
+                <input class="w3-input" type="password" name="pw" />
+            </p>
+            <p>
+                <label>First Name</label>
+                <input class="w3-input" type="text" name="fName" />
+            </p>
+            <p>
+                <label>Last Name</label>
+                <input class="w3-input" type="text" name="lName" />
+            </p>                
+            <p>
+                <label>Email</label>
+                <input class="w3-input" type="text" name="em" />
+            </p>
+            <p>
+                <input class="w3-input" type="submit" value="register" />
+            </p>
+        </form>
+                      
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}

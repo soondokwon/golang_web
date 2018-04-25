@@ -1,0 +1,15 @@
+{{define "main"}}
+<div>
+    <h1>{{.Title}}</h1>
+</div>
+
+<div>
+    [<a href="/edit/{{.Title}}">edit</a>]
+    <div>
+        {{printf "%s" .Body}}
+    </div>
+    <div>
+        <img src="/res/sea-house.jpg" />
+    </div>
+</div>
+{{end}}

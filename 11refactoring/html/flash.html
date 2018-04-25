@@ -1,0 +1,9 @@
+{{define "flash"}}
+  {{with .Errors.message}}
+  <div class="w3-container">
+      <div class="w3-panel w3-pale-blue w3-leftbar w3-rightbar w3-border-blue">
+        <p>{{printf "%s" .}}</p>
+      </div>
+  </div>
+  {{end}}
+{{end}}

@@ -1,0 +1,21 @@
+{{define "index"}}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./static/w3.css" />
+        {{template "header" .}}
+    </head>
+    <body>
+        {{template "navbar" .}}
+        <div>        
+            <h1>Login</h1>
+            <form method="post" action="/login">
+                <div>id : <input type="text" id="id" name="id" /></div>
+                <div>pw : <input type="password" id="pw" name="pw" /></div>
+                <div><input type="submit" value="로그인" /></div>
+            </form>
+        </div>
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}

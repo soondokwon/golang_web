@@ -1,0 +1,16 @@
+{{define "main"}}
+<div>
+    <h1>Upload a file!</h1>
+</div>
+
+<div>
+    <form action="/upload/" method="post" enctype="multipart/form-data">
+        <div>
+            <input type="file" name="myfiles" id="myfiles" multiple="multiple" />
+        </div>
+        <div>
+            <input type="submit" name="submit" value="파일 업로드" />
+        </div>
+    </form>
+</div>
+{{end}}

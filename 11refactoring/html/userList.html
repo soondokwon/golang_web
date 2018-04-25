@@ -1,0 +1,32 @@
+{{define "userList"}}
+<!DOCTYPE html>
+<html>
+    <head>
+        {{template "header" .}}
+        <title>Index Page</title>
+    </head>
+    <body>
+        {{template "navbar" .}}
+        <div class="w3-container">
+            <h2>This is User List Page.</h2>
+            <table class="w3-table-all">
+                <thead>
+                    <tr class="w3-blue">
+                        <th>Id</th>
+                        <th>Pw</th>
+                        <th>Email</th>
+                    </tr>
+                </thead>
+                {{range .}}
+                <tr>
+                    <td>{{.Id}}</td>
+                    <td>{{.Pw}}</td>
+                    <td>{{.Email}}</td>
+                </tr>
+                {{end}}
+            </table>
+        </div>              
+        {{template "footer" .}}
+    </body>
+</html>
+{{end}}
