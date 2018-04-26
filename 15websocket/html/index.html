@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>This is index page.</title>
+    </head>
+    <body>
+        <h1>Websocket test client page.</h1>
+        <input id="clientMsg" type="text" value="test message" />
+        <input id="btnSend" type="button" value="보내기" />
+        <input id="btnClose" type="button" value="Websocket 종료" />
+    </body>
+</html>
+<script type="text/javascript">
+    let createWebSocket = function (wsUrl) {
+       if ("WebSocket" in window) {
+          console.log("WebSocket is supported by your Browser!");
+          
+          // Let us open a web socket
+          let ws = new WebSocket(wsUrl);
+
+          ws.onopen = function() {
+             // Web Socket is connected, send data using send()
+             ws.send("Message to send");
+             console.log("Message is sent...");
+          };
+
+          ws.onmessage = function (evt) { 
+             let receivedMsg = evt.data;
+             console.log("ws.onmessage() : ", receivedMsg);
+          };
+
+          ws.onclose = function() { 
+             // websocket is closed.
+             console.log("Connection is closed..."); 
+          };
+
+          return ws;
+       }       
+       else {
+          // The browser doesn't support WebSocket
+          alert("WebSocket NOT supported by your Browser!");
+       }
+    }
+
+    let ws = createWebSocket("ws://localhost:8000/v1/ws");
+    let wscallback = createWebSocket("ws://localhost:8000/v2/ws");
+
+    document.getElementById('btnSend').onclick = function(e) {
+        let msg = document.getElementById('clientMsg').value;
+        console.log("msg : ", msg);
+        ws.send( msg );
+        wscallback.send( "wscallback : " + msg );
+
+        return true;
+    }
+
+    document.getElementById('btnClose').onclick = function(e) {
+        console.log("before ws : ", ws.readyState);
+        console.log("before wscallback : ", wscallback.readyState);
+
+        ws.close()
+        wscallback.close();
+
+        console.log("after ws : ", ws.readyState);
+        console.log("after wscallback : ", wscallback.readyState);
+
+
+        return true;
+    }
+ </script>
